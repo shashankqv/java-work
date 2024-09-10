@@ -38,7 +38,6 @@ This project demonstrates a simple implementation of a database connection pool 
 
 2. **Expected Output**:
     ```
-    Hello world!
     Obtained connection from pool 1.
     Obtained connection from pool 2.
     Released connection back to pool 1.
