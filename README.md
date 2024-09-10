@@ -5,7 +5,6 @@ This project demonstrates a simple implementation of a database connection pool 
 ## Project Structure
 
 - `src/main/java/org/example/ConnectionPool.java`: Contains the `ConnectionPool` class which manages a pool of database connections.
-- `src/main/java/org/example/Main.java`: Contains the `Main` class which demonstrates the usage of the `ConnectionPool` class.
 - `pom.xml`: Maven configuration file for managing project dependencies.
 
 ## Prerequisites
@@ -18,8 +17,8 @@ This project demonstrates a simple implementation of a database connection pool 
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/vivek-shashank/java-connection-pool.git
-    cd java-connection-pool
+    git clone https://github.com/shashankqv/java-work.git
+    cd java-work
     ```
 
 2. **Configure the database**:
@@ -34,7 +33,7 @@ This project demonstrates a simple implementation of a database connection pool 
 
 1. **Run the application**:
     ```sh
-    mvn exec:java -Dexec.mainClass="org.example.Main"
+    mvn exec:java -Dexec.mainClass="org.example.ConnectionPool"
     ```
 
 2. **Expected Output**:
@@ -49,7 +48,3 @@ This project demonstrates a simple implementation of a database connection pool 
 ## Dependencies
 
 - **MySQL JDBC Driver**: The project uses the MySQL JDBC driver to connect to the MySQL database. The dependency is defined in the `pom.xml` file.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
