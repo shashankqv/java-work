@@ -5,7 +5,6 @@ This project demonstrates a simple implementation of a database connection pool 
 ## Project Structure
 
 - `src/main/java/org/example/ConnectionPool.java`: Contains the `ConnectionPool` class which manages a pool of database connections.
-- `src/main/java/org/example/Main.java`: Contains the `Main` class which demonstrates the usage of the `ConnectionPool` class.
 - `pom.xml`: Maven configuration file for managing project dependencies.
 
 ## Prerequisites
