@@ -32,6 +32,7 @@ public class ConnectionPool {
     // Synchronized method to get a connection from the pool
     public synchronized Connection getConnection() {
         if (connectionPool.isEmpty()) {
+            // TODO - handle this better.
             System.out.println("All connections are in use.");
             return null;
         }
@@ -55,6 +56,11 @@ public class ConnectionPool {
         return connectionPool.size() + usedConnections.size();
     }
 
+    // method to get the size of the used connections
+    public synchronized int getUsedConnectionsSize() {
+        return usedConnections.size();
+    }
+
     // Private method to create a new connection
     private Connection createConnection() throws SQLException {
         return DriverManager.getConnection(dbUrl, user, pass);
@@ -65,16 +71,16 @@ public class ConnectionPool {
             // Create the first connection pool.
             ConnectionPool pool1 = new ConnectionPool(
                     "jdbc:mysql://localhost:3306/database1",
-                    "user1",
-                    "password1",
+                    "username",
+                    "password",
                     5
             );
 
             // Create the second connection pool.
             ConnectionPool pool2 = new ConnectionPool(
                     "jdbc:mysql://localhost:3306/database2",
-                    "user2",
-                    "password2",
+                    "username",
+                    "password",
                     5
             );
             Connection conn1 = pool1.getConnection();
@@ -83,12 +89,20 @@ public class ConnectionPool {
             Connection conn2 = pool2.getConnection();
             System.out.println("Obtained connection from pool 2.");
 
+            System.out.println("Pool 1 size: " + pool1.getPoolSize());
+            System.out.println("Pool 2 size: " + pool2.getPoolSize());
+
+            System.out.println("Used connections from pool 1: " + pool1.getUsedConnectionsSize());
+            System.out.println("Used connections from pool 2: " + pool2.getUsedConnectionsSize());
 
             pool1.releaseConnection(conn1);
             System.out.println("Released connection back to pool 1.");
 
             pool2.releaseConnection(conn2);
             System.out.println("Released connection back to pool 2.");
+
+            System.out.println("Used connections from pool 1: " + pool1.getUsedConnectionsSize());
+            System.out.println("Used connections from pool 2: " + pool2.getUsedConnectionsSize());
 
         } catch (SQLException e) {
             e.printStackTrace();

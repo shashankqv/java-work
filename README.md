@@ -39,9 +39,15 @@ This project demonstrates a simple implementation of a database connection pool 
 2. **Expected Output**:
     ```
     Obtained connection from pool 1.
-    Obtained connection from pool 2.
-    Released connection back to pool 1.
-    Released connection back to pool 2.
+   Obtained connection from pool 2.
+   Pool 1 size: 5
+   Pool 2 size: 5
+   Used connections from pool 1: 1
+   Used connections from pool 2: 1
+   Released connection back to pool 1.
+   Released connection back to pool 2.
+   Used connections from pool 1: 0
+   Used connections from pool 2: 0
     ```
 
 ## Dependencies
